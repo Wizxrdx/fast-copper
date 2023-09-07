@@ -125,7 +125,7 @@ class MouseBox(QWidget):
         super().__init__()
         self.setCursor(Qt.BlankCursor)
         self.setGeometry(0, 0, 50, 50)  # Set the initial size and position of the box
-        self.box_color = QColor(255, 0, 0)  # Red color for the box
+        self.box_color = QColor(255, 0, 0, 100)  # Red color for the box
 
     def paintEvent(self, event):
         painter = QPainter(self)
