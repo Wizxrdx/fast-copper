@@ -80,8 +80,6 @@ class ImageGallery(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('Image Gallery')
-
         self.image_label = QLabel(self)
         self.image_label.setAlignment(Qt.AlignCenter)
         self.showImage(self.current_image_index)
@@ -92,9 +90,13 @@ class ImageGallery(QWidget):
         prev_button = QPushButton('Previous', self)
         prev_button.clicked.connect(self.showPreviousImage)
 
+        extract_button = QPushButton('Extract', self)
+        extract_button.clicked.connect(self.extractImage)
+
         button_layout = QHBoxLayout()
         button_layout.addWidget(prev_button)
         button_layout.addWidget(next_button)
+        button_layout.addWidget(extract_button)
 
         gallery_layout = QVBoxLayout()
         gallery_layout.addWidget(self.image_label)
