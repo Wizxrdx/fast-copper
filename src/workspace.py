@@ -127,6 +127,7 @@ class ImageGallery(QWidget):
             image_path = self.image_paths[self.current_image_index]
             QMessageBox.information(self, "Image Extraction", f"Image path: {image_path}")
 
+
 class MouseBox(QWidget):
     def __init__(self):
         super().__init__()
