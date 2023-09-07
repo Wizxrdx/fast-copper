@@ -38,6 +38,8 @@ class workspace(QWidget):
     def loadImages(self, images_path):
         self.image_paths = images_path
         self.current_image_index = 0
+        
+        self.showImage(self.current_image_index)
 
     def showImage(self, index):
         if 0 <= index < len(self.image_paths):
