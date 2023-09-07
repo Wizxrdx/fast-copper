@@ -121,6 +121,11 @@ class ImageGallery(QWidget):
         if self.current_image_index < 0:
             self.current_image_index = len(self.image_paths) - 1
         self.showImage(self.current_image_index)
+        
+    def extractImage(self):
+        if 0 <= self.current_image_index < len(self.image_paths):
+            image_path = self.image_paths[self.current_image_index]
+            QMessageBox.information(self, "Image Extraction", f"Image path: {image_path}")
 
 class MouseBox(QWidget):
     def __init__(self):
