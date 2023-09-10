@@ -2,6 +2,7 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QStackedWidget
 
+from src.extract import extract
 from src.manager import manager
 from src.workspace import workspace
 
@@ -21,6 +22,10 @@ class MainApp(QStackedWidget):
     def sendImages(self, images):
         self.setCurrentIndex(1)
         self.currentWidget().loadImages(images)
+
+    def extractImages(self, image_paths):
+        for x in image_paths:
+            extract(x)
 
 
 def except_hook(cls, exception, traceback):
