@@ -1,6 +1,6 @@
 import sys
 
-from PyQt5.QtWidgets import QApplication, QStackedWidget
+from PyQt5.QtWidgets import QApplication, QStackedWidget, QMainWindow, QStatusBar
 
 from src.extract import extract
 from src.manager import manager

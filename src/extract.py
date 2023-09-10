@@ -5,6 +5,7 @@ import numpy as np
 class extract:
     def __init__(self, path):
         # Load the image
+        self.path = path
         image = cv2.imread(path)
 
         # Threshold the image to create a mask where non-white pixels are detected
@@ -24,13 +25,11 @@ class extract:
             cropped_image = image[uppermost_pixel[0]:lowermost_pixel[0], leftmost_pixel[1]:rightmost_pixel[1]]
 
             # Save the cropped image as a JPEG file
-            cropped_image = self.add_white_border(self.resize_to_square_with_padding(cropped_image, (25, 25)))
+            cropped_image = self.add_white_border(self.resize_to_square_with_padding(cropped_image, (22, 22)))
             cv2.imwrite(path, cropped_image)
 
-        # Display the result (without the green bounding box)
-        cv2.imshow('Cropped Image', cropped_image)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+    def getPath(self):
+        return self.path
 
     def resize_to_square_with_padding(self, image, target_size):
         # Get the dimensions of the input image
